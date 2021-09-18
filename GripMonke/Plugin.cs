@@ -7,7 +7,7 @@ using HarmonyLib;
 
 namespace Grippy
 {
-    [BepInPlugin("org.ivy.gtag.gripmonke", "GrippyMonke", "1.0")]
+    [BepInPlugin("org.ivy.gtag.gripmonke", "GrippyMonke", "1.1")]
     public class Plugin : BaseUnityPlugin
     {
         public void Awake()

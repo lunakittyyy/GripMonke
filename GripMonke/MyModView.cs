@@ -30,7 +30,7 @@ namespace Grippy
             base.OnShow(args);;
             if (PhotonNetwork.InRoom == true && PhotonNetwork.CurrentRoom.IsVisible == false)
             {
-                TextBase = "GrippyMonke 1.0 by Ivy\nOption 1 to make slippery walls not slip\nOption 2 to make slippery walls slippery\nMod is ";
+                TextBase = "GripMonke 1.1 by Ivy\nOption 1 to make slippery walls not slip\nOption 2 to make slippery walls slippery\nMod is ";
                 Text = TextBase + modStatus;
             }
             else
