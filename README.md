@@ -9,7 +9,7 @@ The menu will not work if you aren't in a private lobby first.
 Click option 1 to enable, option 2 to disable
 
 # License rundown
-Please do not distribute a precompiled version of the program without either linking to or including the source code as well.
+Please do not distribute a compiled version of the program without either linking to or including the source code of the built program as well.
 
 Please include a copy of the GNU General Public License v3.0 when distributing.
 
