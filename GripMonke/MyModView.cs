@@ -20,7 +20,6 @@ namespace Grippy
 {
     public class GripView : ComputerView
     {
-        
         static string modStatus = "Off";
         static string TextBase;
         

@@ -18,7 +18,7 @@ namespace Grippy
 {
     public class GripEntry : IComputerModEntry
     {
-        public string EntryName => "GrippyMonke";
+        public string EntryName => "GripMonke";
         
         public Type EntryViewType => typeof(GripView);
      
