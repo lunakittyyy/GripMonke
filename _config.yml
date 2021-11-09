@@ -1,3 +1,4 @@
 theme: jekyll-theme-midnight
 title: GripMonke page
 description: Download versions of GripMonke.
+show_downloads: true
