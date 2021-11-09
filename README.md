@@ -1,3 +1,4 @@
+https://github.com/Ivy2345/GripMonke/releases/download/1.2rc1/GripMonke_RC.dll
 You can download release canidate or stable releases of GripMonke here.
 
 Release Canidate has the latest features but has less testing.
