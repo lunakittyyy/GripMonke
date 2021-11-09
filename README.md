@@ -1,4 +1,4 @@
-GripMonke (Release Canidate Branch)
+GripMonke
 
 Mod for Gorilla Tag that disables slipping on slippery walls
 
