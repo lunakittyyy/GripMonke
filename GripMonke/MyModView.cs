@@ -21,13 +21,14 @@ namespace Grippy
     public class GripView : ComputerView
     {
         static string modStatus = "Off";
+        static bool inAllowedRoom = false;
         static string TextBase;
-        
+
         public override void OnShow(object[] args)
         {
-           
-            base.OnShow(args);;
-            if (PhotonNetwork.InRoom == true && PhotonNetwork.CurrentRoom.IsVisible == false)
+
+            base.OnShow(args); ;
+            if (inAllowedRoom)
             {
                 TextBase = "GripMonke 1.2 by Lillie#8947\nOption 1 to make slippery walls not slip\nOption 2 to make slippery walls slippery\nMod is ";
                 Text = TextBase + modStatus;
@@ -74,7 +75,7 @@ namespace Grippy
                     if (PhotonNetwork.InRoom == true)
                     {
                         //Console.WriteLine("Are we in a public room? " + PhotonNetwork.CurrentRoom.IsVisible);
-                        if (PhotonNetwork.CurrentRoom.IsVisible == false)
+                        if (inAllowedRoom)
                         {
                             //Console.WriteLine("Is the mod enabled at the computer? " + modStatus);
                             if (modStatus == "On")
@@ -102,6 +103,19 @@ namespace Grippy
                     //Console.WriteLine("Not connected to master server yet");
                 }
             }
+        }
+        [ModdedGamemodeJoin]
+        private void RoomJoined(string gamemode)
+        {
+            // The room is modded. Enable mod stuff.
+            inAllowedRoom = true;
+        }
+
+        [ModdedGamemodeLeave]
+        private void RoomLeft(string gamemode)
+        {
+            // The room was left. Disable mod stuff.
+            inAllowedRoom = false;
         }
     }
 }

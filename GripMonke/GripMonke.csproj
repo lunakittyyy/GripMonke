@@ -56,6 +56,9 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>..\deps\Photon3Unity3D.dll</HintPath>
     </Reference>
+    <Reference Include="PhotonChat">
+      <HintPath>..\deps\PhotonChat.dll</HintPath>
+    </Reference>
     <Reference Include="PhotonRealtime">
       <HintPath>..\deps\PhotonRealtime.dll</HintPath>
     </Reference>
@@ -79,6 +82,9 @@
     </Reference>
     <Reference Include="PlayFab">
       <HintPath>..\deps\PlayFab.dll</HintPath>
+    </Reference>
+    <Reference Include="SteamVR">
+      <HintPath>..\deps\SteamVR.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration">
       <HintPath>..\deps\System.Configuration.dll</HintPath>
@@ -313,6 +319,9 @@
     </Reference>
     <Reference Include="Utilla">
       <HintPath>..\deps\Utilla.dll</HintPath>
+    </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>..\deps\Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
       <HintPath>..\deps\websocket-sharp.dll</HintPath>
