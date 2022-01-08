@@ -10,26 +10,28 @@ namespace Grippy
     public class GripView : ComputerView
     {
         static string modStatus = "Off";
-        static bool inAllowedRoom = false;
+        bool inAllowedRoom = false;
         static string TextBase;
-
+        
+        
         [ModdedGamemodeJoin]
-        private void RoomJoined(string gamemode)
+        public void RoomJoined(string gamemode)
         {
             // The room is modded. Enable mod stuff.
             inAllowedRoom = true;
         }
 
         [ModdedGamemodeLeave]
-        private void RoomLeft(string gamemode)
+        public void RoomLeft(string gamemode)
         {
             // The room was left. Disable mod stuff.
             inAllowedRoom = false;
         }
-        
 
         public override void OnShow(object[] args)
         {
+
+
 
             Console.WriteLine(inAllowedRoom);
 
