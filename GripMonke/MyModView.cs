@@ -4,16 +4,20 @@ using Photon.Pun;
 using ComputerInterface;
 using ComputerInterface.ViewLib;
 using Utilla;
+using BepInEx;
 
 namespace Grippy
 {
+
+    [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
+    [ModdedGamemode]
+
     public class GripView : ComputerView
     {
         static string modStatus = "Off";
         bool inAllowedRoom = false;
         static string TextBase;
-        
-        
+
         [ModdedGamemodeJoin]
         public void RoomJoined(string gamemode)
         {
@@ -26,6 +30,7 @@ namespace Grippy
         {
             // The room was left. Disable mod stuff.
             inAllowedRoom = false;
+            modStatus = "Off";
         }
 
         public override void OnShow(object[] args)
@@ -36,10 +41,10 @@ namespace Grippy
             Console.WriteLine(inAllowedRoom);
 
             base.OnShow(args); ;
-            if (inAllowedRoom)
+            if (inAllowedRoom == true)
             {
                 TextBase = "GripMonke 1.2.1 by Lillie#8947\nOption 1 to make slippery walls not slip\nOption 2 to make slippery walls slippery\nMod is ";
-                Text = TextBase + modStatus;
+                Text = TextBase + modStatus + "Room allowed? " + inAllowedRoom;
             }
             else
             {
