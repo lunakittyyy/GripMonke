@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using HarmonyLib;
-using BepInEx;
-using UnityEngine;
-using System.Reflection;
-using UnityEngine.XR;
 using Photon.Pun;
-using System.IO;
-using System.Net;
-using Photon.Realtime;
-using UnityEngine.Rendering;
 using ComputerInterface;
-using ComputerInterface.Interfaces;
-using Zenject;
 using ComputerInterface.ViewLib;
-using System.Threading.Tasks;
+using Utilla;
 
 namespace Grippy
 {
@@ -24,13 +13,30 @@ namespace Grippy
         static bool inAllowedRoom = false;
         static string TextBase;
 
+        [ModdedGamemodeJoin]
+        private void RoomJoined(string gamemode)
+        {
+            // The room is modded. Enable mod stuff.
+            inAllowedRoom = true;
+        }
+
+        [ModdedGamemodeLeave]
+        private void RoomLeft(string gamemode)
+        {
+            // The room was left. Disable mod stuff.
+            inAllowedRoom = false;
+        }
+        
+
         public override void OnShow(object[] args)
         {
+
+            Console.WriteLine(inAllowedRoom);
 
             base.OnShow(args); ;
             if (inAllowedRoom)
             {
-                TextBase = "GripMonke 1.2 by Lillie#8947\nOption 1 to make slippery walls not slip\nOption 2 to make slippery walls slippery\nMod is ";
+                TextBase = "GripMonke 1.2.1 by Lillie#8947\nOption 1 to make slippery walls not slip\nOption 2 to make slippery walls slippery\nMod is ";
                 Text = TextBase + modStatus;
             }
             else
@@ -75,19 +81,19 @@ namespace Grippy
                     if (PhotonNetwork.InRoom == true)
                     {
                         //Console.WriteLine("Are we in a public room? " + PhotonNetwork.CurrentRoom.IsVisible);
-                        if (inAllowedRoom)
-                        {
+                        // if (inAllowedRoom)
+                        //{
                             //Console.WriteLine("Is the mod enabled at the computer? " + modStatus);
                             if (modStatus == "On")
                             {
                                 __result = 0.03f;
                                 //Console.WriteLine("Mod is enabled and we are in a private room. Result written is " + __result);
                             }
-                            else
-                            {
+                            //else
+                            //{
                                 //Console.WriteLine("Mod is off at computer");
-                            }
-                        }
+                            //}
+                        //}
                         else
                         {
                             //Console.WriteLine("Room appears to be public");
@@ -103,19 +109,7 @@ namespace Grippy
                     //Console.WriteLine("Not connected to master server yet");
                 }
             }
-        }
-        [ModdedGamemodeJoin]
-        private void RoomJoined(string gamemode)
-        {
-            // The room is modded. Enable mod stuff.
-            inAllowedRoom = true;
-        }
-
-        [ModdedGamemodeLeave]
-        private void RoomLeft(string gamemode)
-        {
-            // The room was left. Disable mod stuff.
-            inAllowedRoom = false;
+        
         }
     }
 }
