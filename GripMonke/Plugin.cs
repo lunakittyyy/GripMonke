@@ -6,27 +6,49 @@ using Utilla;
 
 namespace Grippy
 {
-    [BepInPlugin("org.ivy.gtag.gripmonke", "GripMonke", "1.1")]
+    [BepInPlugin("org.ivy.gtag.gripmonke", "GripMonke", "2.0")]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
     [ModdedGamemode]
     public class Plugin : BaseUnityPlugin
     {
-        public static string modStatus = "Off";
-        public void Awake()
+        private static Harmony harmony;
+        static bool inAllowedRoom = false;
+
+        public void OnEnable() // Capitalization on these methods matters
         {
-            var harmony = new Harmony("com.ivy.gtag.gripmonke");
+            harmony = new Harmony("com.ivy.gtag.gripmonke");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Zenjector.Install<GripInstaller>().OnProject();
         }
-        
-        public void onEnable()
+
+        public void OnDisable()
         {
-            modStatus = "On";
+            harmony.UnpatchSelf();
         }
-    
-        public void onDisable()
+
+        [ModdedGamemodeJoin]
+        public void RoomJoined(string gamemode)
         {
-            modStatus = "Off";
+            // The room is modded. Enable mod stuff.
+            inAllowedRoom = true;
+        }
+
+        [ModdedGamemodeLeave]
+        public void RoomLeft(string gamemode)
+        {
+            // The room was left. Disable mod stuff.
+            inAllowedRoom = false;
+        }
+
+        [HarmonyPatch(typeof(GorillaLocomotion.Player), "GetSlidePercentage")]
+        class slidepatch
+        {
+            static void Postfix(ref float __result)
+            {
+                if (inAllowedRoom)
+                {
+                    __result = 0.03f;
+                }
+            }
         }
     }
 }
