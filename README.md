@@ -1,10 +1,15 @@
-GripMonke
+# GripMonke
 
 Mod for Gorilla Tag that disables slipping on slippery walls
 
--=REQUIRES COMPUTER INTERFACE=-
+-=REQUIRES COMPUTER INTERFACE AND UTILLA=-
 
-Usage: Simply install the mod and Computer Interface and open the menu WHILE IN A PRIVATE. The menu will not work if you aren't in a private lobby first. Click option 1 to enable, option 2 to disable
+| Version | Supported          | Requirements               |
+| ------- | ------------------ | -------------------------- |
+| 2.x.x   | :white_check_mark: | Utilla, Computer Interface |
+| 1.x.x   | :x:                | Computer Interface         |
+
+Usage: Simply install the mod and Computer Interface and open the menu while in a modded lobby. The menu will not work if you aren't in a modded lobby first. Enable and disable the mod from the Mod Status menu.
 
 License rundown
 
@@ -18,6 +23,6 @@ You must document any changes you make to the original source code. Please add a
 
 This program does not come with a warranty, so you assume the very small risk that something may go wrong with it.
 
-I am also not liable for any damages, bans, etc. that you cause using this mod without permission of everyone in the lobby.
+I am also not liable for any damages, bans, etc. that you cause using cracked versions of this mod (forks that remove the need for a mod lobby)
 
 Please follow the above guidelines or your fork/modification may be taken down.
