@@ -2,7 +2,7 @@
 
 Mod for Gorilla Tag that disables slipping on slippery walls
 
--=REQUIRES COMPUTER INTERFACE AND UTILLA=-
+**REQUIRES COMPUTER INTERFACE AND UTILLA**
 
 | Version | Supported          | Requirements               |
 | ------- | ------------------ | -------------------------- |
