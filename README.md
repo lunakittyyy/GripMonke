@@ -9,7 +9,7 @@ Mod for Gorilla Tag that disables slipping on slippery walls
 | 2.x.x   | :white_check_mark: | Utilla, Computer Interface |
 | 1.x.x   | :x:                | Computer Interface         |
 
-Usage: Simply install the mod and Computer Interface and open the menu while in a modded lobby. The menu will not work if you aren't in a modded lobby first. Enable and disable the mod from the Mod Status menu.
+Usage: Simply install the mod, Computer Interface, and Utilla then go into a modded lobby. The mod will not work if you aren't in a modded lobby first. Enable and disable the mod from the Mod Status menu.
 
 License rundown
 
