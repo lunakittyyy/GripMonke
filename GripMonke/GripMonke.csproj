@@ -41,6 +41,9 @@
     <Reference Include="ComputerInterface.RoomBrowser">
       <HintPath>..\deps\ComputerInterface.RoomBrowser.dll</HintPath>
     </Reference>
+    <Reference Include="HauntedModMenu">
+      <HintPath>..\deps\HauntedModMenu.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security">
       <HintPath>..\deps\Mono.Security.dll</HintPath>
     </Reference>

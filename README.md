@@ -1,6 +1,8 @@
-# GripMonke
+# GripMonke Indev
 
 Mod for Gorilla Tag that disables slipping on slippery walls
+
+You are currently on the **next** branch. This branch contains potentially unstable or incomplete patches, and may not work as intended, please switch to the **release** branch if you'd like to compile a release version.
 
 **REQUIRES COMPUTER INTERFACE AND UTILLA**
 
