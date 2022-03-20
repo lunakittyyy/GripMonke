@@ -3,10 +3,12 @@ using Bepinject;
 using System.Reflection;
 using HarmonyLib;
 using Utilla;
+using System.ComponentModel;
 
 namespace Grippy
 {
-    [BepInPlugin("org.ivy.gtag.gripmonke", "GripMonke", "2.0.1")]
+    [Description("HauntedModMenu")]
+    [BepInPlugin("org.ivy.gtag.gripmonke", "GripMonke", "2.1.1")]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
     [ModdedGamemode]
     public class Plugin : BaseUnityPlugin
