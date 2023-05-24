@@ -3,6 +3,8 @@ This product is not affiliated with Gorilla Tag or Another Axiom LLC and is not 
 
 Mod for Gorilla Tag that disables slipping on slippery walls
 
+![GitHub all releases](https://img.shields.io/github/downloads/lunakittyyy/GripMonke/total?style=plastic)
+
 **REQUIRES COMPUTER INTERFACE AND UTILLA**
 
 | Version | Supported          | Requirements               |
